@@ -113,6 +113,26 @@ echo "UC 8 completed"
 
 
 
+for((i=0;i<$totalWorkingDays;i++)){
+	echo "Day : $(($i + 1))"
+        attend=$((RANDOM%2))
+        if [ $attend == 1 ]
+        then
+		echo "present"
+                dailywage[$i]=160
+        else
+		echo "absent"
+                dailywage[$i]=0
+        fi
+		echo "wage : ${dailywage[$i]}"
+
+}
+sal=0
+for((i=0;i<$totalWorkingDays;i++)){
+       sal=$(($sal + ${dailywage[$i]} ))
+}
+echo "Total salary : $sal"
+echo "UC 9 completed"
 
 
 
