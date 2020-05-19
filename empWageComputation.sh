@@ -46,3 +46,37 @@ do
 	monthsal=$(($monthsal + $empH * $empRatePerH))
 done
 echo "total month salary : $monthsal"
+echo "UC 5 completed"
+
+hoursCross=0
+daysCross=0
+sal=0
+days=0
+totalH=101
+totalDays=21
+while [[ $hoursCross -lt $totalH && $days -ne $totalDays ]]
+do
+	attend=$((RANDOM%2))
+	if [ $attend == 1 ]
+	then
+		empH=8;
+		let "hoursCross+=8"
+		let days++
+	else
+		empH=0
+	fi
+	sal=$(($sal + $empH + $empRatePerH))
+done
+echo "salary upto condition is reached : $sal"
+
+
+
+
+
+
+
+
+
+
+
+
