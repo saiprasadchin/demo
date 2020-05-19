@@ -31,3 +31,18 @@ esac
 sal=$(($empH * $empRatePerH))
 echo "salary : $sal"
 
+echo "UC3 and UC4 completed"
+totalWorkingDays=20
+monthsal=0
+for((i=1;i<=$totalWorkingDays;i++))
+do
+	attend=$((RANDOM%2))
+	if [ $attend == 1 ]
+	then
+		empH=8
+	else
+		empH=0
+	fi
+	monthsal=$(($monthsal + $empH * $empRatePerH))
+done
+echo "total month salary : $monthsal"
