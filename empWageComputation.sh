@@ -90,12 +90,26 @@ function getWorkHours(){
 }
 getWorkHours
 echo "Total Hours Worked : $totalH"
+echo "UC 7 completed"
 
 
+for((i=0;i<$totalWorkingDays;i++)){
+	attend=$((RANDOM%2))
+	if [ $attend == 1 ]
+	then
+		dailywage[$i]=160
+	else
+		dailywage[$i]=0
+	fi
+}
+echo "Daily wage for days attend : ${dailywage[@]}"
+sal=0
 
-
-
-
+for((i=0;i<$totalWorkingDays;i++)){
+       sal=$(($sal + ${dailywage[$i]} ))
+}
+echo "Total salary : $sal"
+echo "UC 8 completed"
 
 
 
