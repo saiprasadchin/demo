@@ -68,6 +68,30 @@ do
 	sal=$(($sal + $empH + $empRatePerH))
 done
 echo "salary upto condition is reached : $sal"
+echo "UC 6 completed"
+
+totalH=0
+daysWorked=0
+
+function getWorkHours(){
+
+	while [[ $daysWorked -lt $totalWorkingDays ]]
+	do
+		attend=$((RANDOM%2))
+		if [ $attend == 1 ]
+		then
+			let "totalH+=8"
+		else
+			empH=0
+		fi
+	let "daysWorked+=1"
+	done
+
+}
+getWorkHours
+echo "Total Hours Worked : $totalH"
+
+
 
 
 
